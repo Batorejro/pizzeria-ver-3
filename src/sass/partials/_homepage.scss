@@ -1,0 +1,263 @@
+/*wrapper*/
+
+.home-wrapper {
+    margin: ($base-size * 3.5) auto;
+    padding: ($base-size * 6) ($base-size * 4);
+    background: $color-light;
+    border-bottom: 1px solid lighten($color-dark, 70%);
+    border-radius: $radius;
+}
+
+/*boxes order & book*/
+
+.boxes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.box_btn {
+    display: flex;
+    min-width: 50%;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    height: 100px;
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: $radius;
+    }
+
+    h2 {
+        z-index: 1;
+        align-items: center;
+        justify-content: center;
+        color: $color-light;
+        font-weight: $font-semibold;
+        font-family: $font-header;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.25s ease-in-out;
+
+        .btn-text {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.25s ease-in-out;
+            max-height: 0;
+            transform: translate(0, 50%);
+            font-size: 12px;
+            font-weight: $font-light;
+        }
+    }
+}
+
+.box_btn:hover {
+    .btn-text {
+        transform: translate(0, 0);
+        max-height: 100px;
+        opacity: 1;
+    }
+
+    h2 {
+        transform: translate(0, -30%);
+        margin-bottom: 0;
+    }
+}
+
+.order_btn {
+    padding-right: 5px;
+}
+
+.booking_btn {
+    padding-left: 5px;
+}
+
+/*opening hours*/
+
+.openingHours {
+    display: flex;
+    min-width: 100%;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5px;
+    background-color: $color-main;
+    color: $color-light;
+    border-radius: $radius;
+    font-family: $font-header;
+    padding: 0;
+
+    h2 {
+        font-weight: $font-semibold;
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+
+    p {
+        font-weight: $font-light;
+        margin-bottom: 30px;
+        margin-top: 0;
+    }
+}
+
+/*carousel*/
+
+.main-carousel {
+    margin-top: 90px;
+}
+
+.carousel-cell {
+    width: 100%;
+    height: 160px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.flickity-button {
+    background: transparent;
+}
+
+
+.flickity-button-icon {
+    fill: transparent;
+}
+
+.carousel-img {
+    flex: 0 0 30%;
+    justify-content: flex-start;
+    align-items: left;
+}
+
+.carousel-img img {
+    width: 160px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $radius;
+}
+
+.carousel-text {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 70%;
+    font-family: $font-text;
+    font-weight: $font-light;
+
+    h2 {
+        margin-bottom: 0;
+    }
+
+    .person {
+        margin-top: 0;
+        font-style: italic;
+    }
+}
+
+/*gallery*/
+
+.gallery {
+    margin-top: 90px;
+}
+
+.gallery-row {
+    display: flex;
+    flex-direction: row;
+
+    .gallery-img {
+        flex: 0 0 33%;
+        width: 190px;
+        height: 190px;
+        margin-top: 10px;
+        transition: all 0.25s ease-in-out;
+        position: relative;
+
+        img {
+            width: 190px;
+            height: 190px;
+            object-fit: cover;
+            border-radius: $radius;
+
+        }
+    }
+}
+
+.img-layer {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 190px;
+    height: 190px;
+    background: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    transition: all 0.25s ease-in-out;
+
+    a {
+        background: none;
+        color: $color-light;
+        font-size: 20px;
+        height: 20px;
+        width: 20px;
+        margin-left: 5px;
+        margin-right: 5px;
+        transition: all 0.25s ease-in-out;
+
+        &:hover {
+            color: $color-main;
+        }
+    }
+}
+
+.gallery-img:hover {
+    .img-layer {
+        visibility: visible;
+    }
+}
+
+.gallery-link {
+    margin-top: 30px;
+
+    a {
+        color: $color-main;
+    }
+}
+
+/*Media*/
+@media (max-width: 767px) {
+    .main-carousel {
+        margin-top: 45px;
+    }
+
+    .carousel-cell {
+        display: flex;
+        flex-direction: column;
+
+        .carousel-img {
+            display: none;
+        }
+
+        .person {
+            font-size: 8px;
+        }
+    }
+
+    .gallery-row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
