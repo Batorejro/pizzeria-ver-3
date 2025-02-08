@@ -6,7 +6,7 @@ import { utils } from '../utils.js';
 
 class HourPicker extends BaseWidget {
     constructor(wrapper) {
-        super(wrapper, settings.hours.open);
+        super(wrapper, settings.hours.open); ////klasa pochodna oparta na klasie bazowej ale w konstruktorze wywyołuje konsta klasy bazowej
         const thisWidget = this;
         thisWidget.dom.input = thisWidget.dom.wrapper.querySelector(select.widgets.hourPicker.input);
         thisWidget.dom.output = thisWidget.dom.wrapper.querySelector(select.widgets.hourPicker.output);

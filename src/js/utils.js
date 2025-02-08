@@ -42,7 +42,7 @@ utils.queryParams = function (params) {
     .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
     .join('&');
 };
-
+//dodano z 9.4
 utils.convertDataSourceToDbJson = function () {
   const productJson = [];
   for (let key in dataSource.products) {
