@@ -1,5 +1,5 @@
 {
-    "name": "Maca_powraca",
+    "name": "fer-07-project",
     "version": "1.0.0",
     "description": "",
     "main": "index.html",
@@ -20,13 +20,14 @@
         "build:autoprefixer": "postcss dist/css/*.css --use autoprefixer -d dist/css",
         "build-dev": "npm-run-all build-dev:sass build:autoprefixer",
         "build-dev:sass": "sass --style=expanded --source-map src/sass:dist/css",
-        "server": "json-server --port 3131 --no-cors --delay 1500 --watch dist/db/app.json",
+        "server": "json-server --port 3131 --no-cors --delay 250 --watch dist/db/app.json",
         "watch": "npm-run-all build build-dev -p watch:* server",
         "watch:browsersync": "browser-sync start --server dist --files \"dist/**/*\" --ignore \"dist/db/**/*\"",
-        "watch:sassprefixer": "onchange \"src/sass/**/*.scss\" -- npm run build-dev"
+        "watch:sassprefixer": "onchange \"src/sass/**/*.scss\" -- npm run build-dev",
+        "watch:copy": "onchange -e \"**/sass/**/*\" -e \"**/.gitkeep\" \"src/**/*\" -- copyfiles -a -u 1 {{changed}} dist"
     },
     "keywords": [],
-    "author": "Arol Karol",
+    "author": "",
     "license": "ISC",
     "devDependencies": {
         "autoprefixer": "^10.2.4",
@@ -43,11 +44,12 @@
         "postcss-scss": "^4.0.4",
         "rimraf": "^3.0.2",
         "sass": "^1.44.0",
-        "stylelint": "^14.11.0",
-        "stylelint-config-standard-scss": "^5.0.0",
+        "stylelint": "^15.10.1",
+        "stylelint-config-standard-scss": "^10.0.0",
         "stylelint-scss": "^4.3.0"
     },
     "dependencies": {
-        "json-server": "^0.17.4"
+        "json-server": "^0.17.3",
+        "run-all": "^1.0.1"
     }
 }
