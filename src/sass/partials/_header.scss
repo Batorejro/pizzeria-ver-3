@@ -1,5 +1,5 @@
 .header {
-  top: 0px;
+  top: -25px;
   padding: 60px 0;
   background-size: cover;
   background-image: url('/images/italy1.png');
@@ -23,7 +23,7 @@
 
   &__title {
     margin: 0 0 $base-size 0;
-    font-size: ($base-size * 5);
+    font-size: ($base-size * 4);
     font-family: $font-header;
     font-weight: $font-light;
     text-transform: uppercase;
@@ -36,7 +36,7 @@
 
   &__subtitle {
     margin: 0;
-    font-size: ($base-size * 2.5);
+    font-size: ($base-size * 2);
     font-weight: $font-light;
     font-style: italic;
   }
@@ -46,7 +46,7 @@
 .main-nav {
   position: absolute;
   @include flex(row, flex-start, flex-start);
-  bottom: ($base-size * -5);
+  bottom: ($base-size * -4.5);
   opacity: 1;
   transform: scale(1);
   transition: 0.2s all;
